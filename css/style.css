@@ -528,6 +528,12 @@ body {
     background-size: cover;
 }
 
+@media (min-width: 520px) {
+    .benefits-block{
+        margin-top: -223px;
+    }
+}
+
 /* Intro styles end */
 @media (max-width: 800px) {
     .texts-head {
@@ -539,6 +545,7 @@ body {
     .inspitation-text-2{
         font-size: 30px;
     }
+
 
 }
 
@@ -552,6 +559,9 @@ body {
 @media (max-width: 520px) {
     .texts-head {
         width: 380px;
+    }
+    .benefits-block{
+        margin-top: -80px;
     }
     .inspitation-text{
         font-size: 30px;
