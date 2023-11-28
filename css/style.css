@@ -66,12 +66,14 @@ time, mark, audio, video {
 }
 
 .inspitation-text{
-    margin-top:40%;
+    padding-top:40%;
+    padding-bottom: 10%;
     font-size: 50px;
 }
 
 .inspitation-text-2{
-    margin-top:50%;
+    padding-top:50%;
+    padding-bottom: 10%;
     font-size: 50px;
 }
 /*.inspiration-block{*/
@@ -82,8 +84,11 @@ time, mark, audio, video {
 /*}*/
 
 .block1{
-    width: 619px;
-    height: 354px;
+    background-size: auto auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+
 }
 
 /* make sure to set some focus styles for accessibility */
@@ -556,6 +561,11 @@ body {
 
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 @media (max-width: 520px) {
     .texts-head {
         width: 380px;
