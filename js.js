@@ -1,23 +1,31 @@
+document.addEventListener('DOMContentLoaded', () => { // DOM готов к взаимодейтсвию
 
-String.prototype.replaceAt = function(index, replacement) {
-    if (index >= this.length) {
-        return this.valueOf();
-    }
+  const onScrollHeader = () => { // объявляем основную функцию onScrollHeader
 
-    return this.substring(0, index) + replacement + this.substring(index + 1);
-}
+    const header = document.querySelector('.header') // находим header и записываем в константу
 
-function trafficLights(road, n) {
-    let local_road = road
-    let g = 0
-    let w = 0
-    let r = 0
+    let prevScroll = window.pageYOffset // узнаем на сколько была прокручена страница ранее
+    let currentScroll // на сколько прокручена страница сейчас (пока нет значения)
 
-    for (let i = 0; i < n; i++){
+    window.addEventListener('scroll', () => { // при прокрутке страницы
 
-        local_road = local_road.replaceAt(local_road.indexOf("C"), "P")
-    }
-    return local_road
-}
+      currentScroll = window.pageYOffset // узнаем на сколько прокрутили страницу
 
-console.log(trafficLights("C...R............G......", 10))
+      const headerHidden = () => header.classList.contains('header_color') // узнаем скрыт header или нет
+
+      if (currentScroll > prevScroll && !headerHidden()) { // если прокручиваем страницу вниз и header не скрыт
+        header.classList.add('header_color') // то скрываем header
+      }
+      if (currentScroll < prevScroll && headerHidden()) { // если прокручиваем страницу вверх и header скрыт
+        header.classList.remove('header_color') // то отображаем header
+      }
+
+      prevScroll = currentScroll // записываем на сколько прокручена страница на данный момент
+
+    })
+
+  }
+
+  onScrollHeader() // вызываем основную функцию onScrollHeader
+
+});

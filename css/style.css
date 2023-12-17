@@ -123,10 +123,18 @@ block {
     max-width: 300px;
 }
 
+.top-places-text {
+  text-align: right;
+}!important
 
 /* make sure to set some focus styles for accessibility */
 :focus {
     outline: 0;
+}
+
+.header_color{
+    background-color: #414a4c;
+    opacity: 0.75;
 }
 
 /* HTML5 display-role reset for older browsers */
