@@ -1,31 +1,31 @@
-document.addEventListener('DOMContentLoaded', () => { // DOM готов к взаимодейтсвию
+document.addEventListener('DOMContentLoaded', () => { 
 
-  const onScrollHeader = () => { // объявляем основную функцию onScrollHeader
+  const onScrollHeader = () => { 
 
-    const header = document.querySelector('.header') // находим header и записываем в константу
+    const header = document.querySelector('.header') 
 
-    let prevScroll = window.pageYOffset // узнаем на сколько была прокручена страница ранее
-    let currentScroll // на сколько прокручена страница сейчас (пока нет значения)
+    let prevScroll = window.pageYOffset
+    let currentScroll 
 
-    window.addEventListener('scroll', () => { // при прокрутке страницы
+    window.addEventListener('scroll', () => { 
 
-      currentScroll = window.pageYOffset // узнаем на сколько прокрутили страницу
+      currentScroll = window.pageYOffset 
 
-      const headerHidden = () => header.classList.contains('header_color') // узнаем скрыт header или нет
+      const headerHidden = () => header.classList.contains('header_color') 
 
-      if (currentScroll > prevScroll && !headerHidden()) { // если прокручиваем страницу вниз и header не скрыт
-        header.classList.add('header_color') // то скрываем header
+      if (currentScroll > prevScroll && !headerHidden()) { 
+        header.classList.add('header_color') 
       }
-      if (currentScroll < prevScroll && headerHidden()) { // если прокручиваем страницу вверх и header скрыт
-        header.classList.remove('header_color') // то отображаем header
+      if (currentScroll < prevScroll && headerHidden()) {
+        header.classList.remove('header_color')
       }
 
-      prevScroll = currentScroll // записываем на сколько прокручена страница на данный момент
+      prevScroll = currentScroll
 
     })
 
   }
 
-  onScrollHeader() // вызываем основную функцию onScrollHeader
+  onScrollHeader() 
 
 });
